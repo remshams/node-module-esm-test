@@ -1,3 +1,3 @@
-import { echo } from 'node-module-esm';
+import * as echo from 'node-module-esm';
 
-console.log(echo('running'));
+console.log(echo.echo('running'));
