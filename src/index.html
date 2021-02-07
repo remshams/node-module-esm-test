@@ -7,11 +7,11 @@
     <h2>Umd Bundled</h2>
     <span id="umd-bundled" class="content"></span>
 
-    <h2>EMS Bundled</h2>
-    <span id="ems-bundled" class="content"></span>
+    <h2>ESM Bundled</h2>
+    <span id="esm-bundled" class="content"></span>
 
-    <h2>EMS Unbundled</h2>
-    <span id="ems-unbundled" class="content"></span>
+    <h2>ESM Unbundled</h2>
+    <span id="esm-unbundled" class="content"></span>
 
     <script src="../node_modules/node-module-esm/lib/bundles/bundle.umd.min.js"></script>
     <script type="text/javascript">
@@ -24,7 +24,7 @@
       import { echo } from '../node_modules/node-module-esm/lib/bundles/bundle.esm.min.js';
 
       setTimeout(() => {
-        const content = document.querySelector('#ems-bundled');
+        const content = document.querySelector('#esm-bundled');
         content.textContent = echo('test with esm bundled');
       }, 4000);
     </script>
@@ -33,7 +33,7 @@
       import { echo } from '../node_modules/node-module-esm/lib/esm/index.js';
 
       setTimeout(() => {
-        const content = document.querySelector('#ems-unbundled');
+        const content = document.querySelector('#esm-unbundled');
         content.textContent = echo('test with esm unbundled');
       }, 8000);
     </script>
