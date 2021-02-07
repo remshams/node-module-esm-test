@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Example Library</h1>
+    <h2>Umd Bundled</h2>
+    <span id="umd-bundled" class="content"></span>
+
+    <h2>EMS Bundled</h2>
+    <span id="ems-bundled" class="content"></span>
+
+    <h2>EMS Unbundled</h2>
+    <span id="ems-unbundled" class="content"></span>
+
+    <script src="../node_modules/node-module-esm/lib/bundles/bundle.umd.min.js"></script>
+    <script type="text/javascript">
+      setTimeout(() => {
+        var content = document.querySelector('#umd-bundled');
+        content.textContent = myLibrary.echo('test with esm bundled');
+      }, 2000);
+    </script>
+    <script type="module">
+      import { echo } from '../node_modules/node-module-esm/lib/bundles/bundle.esm.min.js';
+
+      setTimeout(() => {
+        const content = document.querySelector('#ems-bundled');
+        content.textContent = echo('test with esm bundled');
+      }, 4000);
+    </script>
+
+    <script type="module">
+      import { echo } from '../node_modules/node-module-esm/lib/esm/index.js';
+
+      setTimeout(() => {
+        const content = document.querySelector('#ems-unbundled');
+        content.textContent = echo('test with esm unbundled');
+      }, 8000);
+    </script>
+  </body>
+</html>
